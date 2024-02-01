@@ -3,6 +3,8 @@ package com.dfavilav.marvelapplication.data.local
 import android.content.Context
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.dfavilav.marvelapplication.data.local.dao.ComicRemoteKeysDao
+import com.dfavilav.marvelapplication.data.local.dao.ComicsDao
 
 abstract class MarvelDatabase : RoomDatabase() {
 
@@ -18,4 +20,7 @@ abstract class MarvelDatabase : RoomDatabase() {
                 .build()
         }
     }
+
+    abstract fun comicDao(): ComicsDao
+    abstract fun comicRemoteKeysDao(): ComicRemoteKeysDao
 }

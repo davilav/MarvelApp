@@ -1,7 +1,15 @@
 package com.dfavilav.marvelapplication.domain.model
 
-data class Result(
-    var id: Int? = null,
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import com.dfavilav.marvelapplication.util.Constants
+import kotlinx.serialization.Serializable
+
+@Serializable
+@Entity(tableName = Constants.COMIC_DATABASE_TABLE)
+data class Comic(
+    @PrimaryKey(autoGenerate = false)
+    var id: Int,
     var digitalId: Int? = null,
     var title: String? = null,
     var variantDescription: String? = null,

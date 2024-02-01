@@ -5,5 +5,5 @@ data class Data(
     var limit: Int? = null,
     var total: Int? = null,
     var count: Int? = null,
-    var results: List<Result> = listOf()
+    var results: List<Comic> = listOf()
 )
