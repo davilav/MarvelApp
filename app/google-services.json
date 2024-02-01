@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "77832900665",
+    "project_id": "marvel-a09fb",
+    "storage_bucket": "marvel-a09fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:77832900665:android:b6d03d80f16981436b7de8",
+        "android_client_info": {
+          "package_name": "com.dfavilav.marvelapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgVepWncGUF0ICibGYur4kvCtYSg73_5A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
