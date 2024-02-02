@@ -3,6 +3,8 @@ package com.dfavilav.marvelapplication.di
 import android.content.Context
 import androidx.room.Room
 import com.dfavilav.marvelapplication.data.local.MarvelDatabase
+import com.dfavilav.marvelapplication.data.repository.LocalDataSourceImpl
+import com.dfavilav.marvelapplication.domain.repository.LocalDataSource
 import com.dfavilav.marvelapplication.util.Constants.MARVEL_DATABASE
 import dagger.Module
 import dagger.Provides
@@ -25,4 +27,15 @@ object DatabaseModule {
             MARVEL_DATABASE
         ).build()
     }
+
+    @Provides
+    @Singleton
+    fun provideLocalDataSource(
+        database: MarvelDatabase
+    ): LocalDataSource {
+        return LocalDataSourceImpl(
+            database
+        )
+    }
+
 }
