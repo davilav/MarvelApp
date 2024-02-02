@@ -1,7 +1,10 @@
 package com.dfavilav.marvelapplication.di
 
 import androidx.paging.ExperimentalPagingApi
+import com.dfavilav.marvelapplication.data.local.MarvelDatabase
 import com.dfavilav.marvelapplication.data.remote.MarvelApi
+import com.dfavilav.marvelapplication.data.repository.RemoteDataSourceImpl
+import com.dfavilav.marvelapplication.domain.repository.RemoteDataSource
 import com.dfavilav.marvelapplication.util.Constants.BASE_URL
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
@@ -52,6 +55,18 @@ object NetworkModule {
     fun provideApi(retrofit: Retrofit): MarvelApi {
         return retrofit.create(MarvelApi::class.java)
     }
+
+    @Provides
+    @Singleton
+    fun provideRemoteDataSource(
+        marvelApi: MarvelApi,
+        marvelDatabase: MarvelDatabase
+    ): RemoteDataSource {
+        return RemoteDataSourceImpl(
+            marvelApi, marvelDatabase
+        )
+    }
+
 
     private val json = Json {
         isLenient = true
