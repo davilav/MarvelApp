@@ -1,7 +1,9 @@
-package com.dfavilav.marvelapplication.domain.model
+package com.dfavilav.marvelapplication.domain.model.comic
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.dfavilav.marvelapplication.domain.model.Price
+import com.dfavilav.marvelapplication.domain.model.Thumbnail
 import com.dfavilav.marvelapplication.util.Constants
 import kotlinx.serialization.Serializable
 
@@ -15,7 +17,5 @@ data class Comic(
     var variantDescription: String? = null,
     var description: String? = null,
     var modified: String? = null,
-    var prices: ArrayList<Price> = arrayListOf(),
     var thumbnail: Thumbnail? = Thumbnail(),
-    var images: ArrayList<String> = arrayListOf(),
 )

@@ -1,8 +1,8 @@
-package com.dfavilav.marvelapplication.domain.use_cases
+package com.dfavilav.marvelapplication.domain.use_cases.comic
 
 import androidx.paging.PagingData
 import com.dfavilav.marvelapplication.data.repository.Repository
-import com.dfavilav.marvelapplication.domain.model.Comic
+import com.dfavilav.marvelapplication.domain.model.comic.Comic
 import kotlinx.coroutines.flow.Flow
 
 class GetAllComicsUseCase(

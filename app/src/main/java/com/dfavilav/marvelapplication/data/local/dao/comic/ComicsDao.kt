@@ -1,11 +1,11 @@
-package com.dfavilav.marvelapplication.data.local.dao
+package com.dfavilav.marvelapplication.data.local.dao.comic
 
 import androidx.paging.PagingSource
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.dfavilav.marvelapplication.domain.model.Comic
+import com.dfavilav.marvelapplication.domain.model.comic.Comic
 
 @Dao
 interface ComicsDao {

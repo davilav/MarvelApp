@@ -16,6 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.dfavilav.marvelapplication.R
+import com.dfavilav.marvelapplication.navigation.Screen
 import com.dfavilav.marvelapplication.ui.theme.MarvelRed
 import kotlinx.coroutines.delay
 
@@ -26,6 +27,7 @@ fun SplashScreen(
     LaunchedEffect(key1 = true) {
         delay(7000)
         navController.popBackStack()
+        navController.navigate(Screen.Home.route)
     }
     Splash()
 }

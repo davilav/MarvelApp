@@ -1,4 +1,4 @@
-package com.dfavilav.marvelapplication.data.paging
+package com.dfavilav.marvelapplication.data.paging.comic
 
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.LoadType
@@ -7,8 +7,8 @@ import androidx.paging.RemoteMediator
 import androidx.room.withTransaction
 import com.dfavilav.marvelapplication.data.local.MarvelDatabase
 import com.dfavilav.marvelapplication.data.remote.MarvelApi
-import com.dfavilav.marvelapplication.domain.model.Comic
-import com.dfavilav.marvelapplication.domain.model.ComicRemoteKeys
+import com.dfavilav.marvelapplication.domain.model.comic.Comic
+import com.dfavilav.marvelapplication.domain.model.comic.ComicRemoteKeys
 import com.dfavilav.marvelapplication.util.Constants.CACHE_TIMEOUT
 import com.dfavilav.marvelapplication.util.Constants.MINUTE
 import com.dfavilav.marvelapplication.util.Constants.ONE

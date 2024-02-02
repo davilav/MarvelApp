@@ -1,4 +1,4 @@
-package com.dfavilav.marvelapplication.domain.model
+package com.dfavilav.marvelapplication.domain.model.comic
 
 data class Data(
     var offset: Int? = null,

@@ -4,6 +4,7 @@ import androidx.compose.material.Colors
 import androidx.compose.ui.graphics.Color
 
 val MarvelRed = Color(0XFFD40317)
+val White = Color(0xFFFFFFFF)
 
 val Purple200 = Color(0xFFBB86FC)
 val Purple500 = Color(0xFF6200EE)
