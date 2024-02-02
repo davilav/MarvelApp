@@ -1,7 +1,7 @@
-package com.dfavilav.marvelapplication.domain.use_cases
+package com.dfavilav.marvelapplication.domain.use_cases.comic
 
 import com.dfavilav.marvelapplication.data.repository.Repository
-import com.dfavilav.marvelapplication.domain.model.Comic
+import com.dfavilav.marvelapplication.domain.model.comic.Comic
 
 class GetSelectedComicsUseCase(
     private val repository: Repository

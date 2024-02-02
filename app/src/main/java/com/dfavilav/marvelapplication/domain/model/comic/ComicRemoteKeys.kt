@@ -1,4 +1,4 @@
-package com.dfavilav.marvelapplication.domain.model
+package com.dfavilav.marvelapplication.domain.model.comic
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

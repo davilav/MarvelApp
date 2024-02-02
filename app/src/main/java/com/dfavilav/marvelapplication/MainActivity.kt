@@ -25,12 +25,6 @@ class MainActivity : ComponentActivity() {
     @Inject
     lateinit var useCases: UseCases
 
-
-    @OptIn(
-        ExperimentalMaterialApi::class,
-        ExperimentalAnimationApi::class,
-        ExperimentalCoilApi::class
-    )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
