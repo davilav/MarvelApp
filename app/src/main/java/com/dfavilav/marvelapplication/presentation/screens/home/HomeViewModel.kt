@@ -1,4 +1,4 @@
-package com.dfavilav.marvelapplication.presentation.home
+package com.dfavilav.marvelapplication.presentation.screens.home
 
 import androidx.lifecycle.ViewModel
 import com.dfavilav.marvelapplication.domain.use_cases.UseCases

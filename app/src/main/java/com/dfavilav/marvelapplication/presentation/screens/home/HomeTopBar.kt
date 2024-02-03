@@ -1,4 +1,4 @@
-package com.dfavilav.marvelapplication.presentation.home
+package com.dfavilav.marvelapplication.presentation.screens.home
 
 
 import androidx.compose.foundation.Image

@@ -1,4 +1,4 @@
-package com.dfavilav.marvelapplication.presentation.home
+package com.dfavilav.marvelapplication.presentation.screens.home
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -26,7 +26,7 @@ fun HomeScreen(
         topBar = {
             HomeTopBar(
                 onSearchClicked = {
-                    navController.navigate(Screen.Splash.route)
+                    navController.navigate(Screen.Search.route)
                 }
             )
         },
