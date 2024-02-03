@@ -7,8 +7,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import coil.annotation.ExperimentalCoilApi
-import com.dfavilav.marvelapplication.presentation.home.HomeScreen
-import com.dfavilav.marvelapplication.presentation.splash.SplashScreen
+import com.dfavilav.marvelapplication.presentation.screens.home.HomeScreen
+import com.dfavilav.marvelapplication.presentation.screens.search.SearchScreen
+import com.dfavilav.marvelapplication.presentation.screens.splash.SplashScreen
 
 @ExperimentalMaterialApi
 @ExperimentalCoilApi
@@ -24,6 +25,9 @@ fun SetupNavGraph(navController: NavHostController) {
         }
         composable(route = Screen.Home.route) {
             HomeScreen(navController = navController)
+        }
+        composable(route = Screen.Search.route) {
+            SearchScreen(navController = navController)
         }
     }
 }

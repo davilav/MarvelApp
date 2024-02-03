@@ -1,4 +1,4 @@
-package com.dfavilav.marvelapplication.presentation.splash
+package com.dfavilav.marvelapplication.presentation.screens.splash
 
 import android.content.res.Configuration
 import androidx.compose.foundation.Image
