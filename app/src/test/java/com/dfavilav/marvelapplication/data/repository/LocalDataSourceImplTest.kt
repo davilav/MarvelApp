@@ -41,7 +41,7 @@ class LocalDataSourceImplTest {
         val characterId = 1
         val mockCharacter = Hero(
             id = 1,
-            name = "Rick Sanchez",
+            name = "Iron Man",
             description = "",
             thumbnail = Thumbnail("", ""),
         )
@@ -59,7 +59,7 @@ class LocalDataSourceImplTest {
         val comicId = 1
         val mockComic = Comic(
             id = 1,
-            title = "Rick Sanchez",
+            title = "Iron Man",
             description = "",
             thumbnail = Thumbnail("", ""),
         )

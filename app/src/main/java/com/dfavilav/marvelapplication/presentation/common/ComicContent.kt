@@ -165,8 +165,8 @@ fun ComicItemPreview() {
     ComicItem(
         comic = Comic(
             id = 1,
-            title = "Rick Sanchez",
-            description = "Sanchez",
+            title =  "Iron Man",
+            description =  "Iron Man",
             thumbnail = Thumbnail(
                 "",
                 ""
@@ -183,8 +183,8 @@ fun ComicItemDarkPreview() {
     ComicItem(
         comic = Comic(
             id = 1,
-            title = "Rick Sanchez",
-            description = "Sanchez",
+            title =  "Iron Man",
+            description = "Iron Man",
             thumbnail = Thumbnail(
                 "",
                 ""

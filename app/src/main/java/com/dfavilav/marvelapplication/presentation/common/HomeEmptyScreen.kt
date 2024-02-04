@@ -50,7 +50,7 @@ fun EmptyScreen(
     characters: LazyPagingItems<Hero>? = null
 ) {
     var message by remember {
-        mutableStateOf("Find your Favorite character of Rick&Morty!")
+        mutableStateOf("Find your Favorite character of Marvel!")
     }
     var icon by remember {
         mutableIntStateOf(R.drawable.ic_marvel)

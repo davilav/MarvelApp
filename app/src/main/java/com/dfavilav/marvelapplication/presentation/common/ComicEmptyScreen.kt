@@ -1,6 +1,5 @@
 package com.dfavilav.marvelapplication.presentation.common
 
-import android.content.res.Configuration
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
@@ -34,12 +33,10 @@ import androidx.compose.ui.graphics.Color.Companion.LightGray
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import com.dfavilav.marvelapplication.R
 import com.dfavilav.marvelapplication.domain.model.comic.Comic
-import com.dfavilav.marvelapplication.domain.model.hero.Hero
 import com.dfavilav.marvelapplication.ui.theme.NETWORK_ERROR_ICON_HEIGHT
 import com.dfavilav.marvelapplication.ui.theme.SMALL_PADDING
 import java.net.ConnectException
@@ -51,7 +48,7 @@ fun ComicEmptyScreen(
     characters: LazyPagingItems<Comic>? = null
 ) {
     var message by remember {
-        mutableStateOf("Find your Favorite character of Rick&Morty!")
+        mutableStateOf("Find your Favorite character of Marvel!")
     }
     var icon by remember {
         mutableIntStateOf(R.drawable.ic_marvel)

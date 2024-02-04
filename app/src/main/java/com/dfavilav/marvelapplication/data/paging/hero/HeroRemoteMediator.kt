@@ -40,7 +40,7 @@ class HeroRemoteMediator(
             val page = when (loadType) {
                 LoadType.REFRESH -> {
                     val remoteKeys = getRemoteKeyClosestToCurrentPosition(state)
-                    remoteKeys?.nextOffset?.minus(100) ?: 100
+                    remoteKeys?.nextOffset?.minus(1) ?: 1
                 }
                 LoadType.PREPEND -> {
                     val remoteKeys = getRemoteKeyForFirstItem(state)
@@ -60,7 +60,7 @@ class HeroRemoteMediator(
                 }
             }
 
-            val response = marvelApi.getAllHeroes()
+            val response = marvelApi.getAllHeroes(offset = page)
             if (response.data.results.isNotEmpty()) {
                 database.withTransaction {
                     if (loadType == LoadType.REFRESH) {

@@ -163,8 +163,8 @@ fun CharacterItemPreview() {
     ComicItem(
         character = Hero(
             id = 1,
-            name = "Rick Sanchez",
-            description = "Sanchez",
+            name =  "Iron Man",
+            description = "Iron Man",
             thumbnail = Thumbnail(
                 "",
                 ""
@@ -181,8 +181,8 @@ fun CharacterItemDarkPreview() {
     ComicItem(
         character = Hero(
             id = 1,
-            name = "Rick Sanchez",
-            description = "Sanchez",
+            name =  "Iron Man",
+            description = "Iron Man",
             thumbnail = Thumbnail(
                 "",
                 ""
