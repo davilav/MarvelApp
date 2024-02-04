@@ -6,9 +6,9 @@ import com.dfavilav.marvelapplication.domain.model.comic.Comic
 import kotlinx.coroutines.flow.Flow
 
 class GetAllComicsUseCase(
-    private val repository: Repository
+    private val repository: Repository,
 ) {
-    operator fun invoke(): Flow<PagingData<Comic>> {
-        return repository.getAllComics()
+    operator fun invoke(id: Int): Flow<PagingData<Comic>> {
+        return repository.getAllComics(id)
     }
 }

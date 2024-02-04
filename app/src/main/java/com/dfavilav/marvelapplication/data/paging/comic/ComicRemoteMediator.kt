@@ -18,7 +18,8 @@ import com.dfavilav.marvelapplication.util.Constants.ZERO_LONG
 @ExperimentalPagingApi
 class ComicRemoteMediator(
     private val marvelApi: MarvelApi,
-    private val database: MarvelDatabase
+    private val database: MarvelDatabase,
+    private val characterId: Int
 ) : RemoteMediator<Int, Comic>() {
 
     private val comicDao = database.comicDao()
@@ -64,7 +65,7 @@ class ComicRemoteMediator(
                 }
             }
 
-            val response = marvelApi.getAllComicsByCharacter(page)
+            val response = marvelApi.getAllComicsByCharacter(characterId)
             if (response.data.results.isNotEmpty()) {
                 database.withTransaction {
                     if (loadType == LoadType.REFRESH) {

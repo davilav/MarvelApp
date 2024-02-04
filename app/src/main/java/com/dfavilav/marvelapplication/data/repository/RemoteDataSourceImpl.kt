@@ -50,13 +50,14 @@ class RemoteDataSourceImpl(
     }
 
 
-    override fun getAllComics(): Flow<PagingData<Comic>> {
+    override fun getAllComics(id: Int): Flow<PagingData<Comic>> {
         val pagingSourceFactory = { comicsDao.getAllComics() }
         return Pager(
             config = PagingConfig(pageSize = ITEMS_PER_PAGE),
             remoteMediator = ComicRemoteMediator(
                 marvelApi,
-                marvelDatabase
+                marvelDatabase,
+                id
             ),
             pagingSourceFactory = pagingSourceFactory
         ).flow

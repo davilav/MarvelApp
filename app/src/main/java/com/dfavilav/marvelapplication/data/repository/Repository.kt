@@ -25,8 +25,8 @@ class Repository @Inject constructor(
         return remote.searchHeroes(query)
     }
 
-    fun getAllComics(): Flow<PagingData<Comic>> {
-        return remote.getAllComics()
+    fun getAllComics(id: Int): Flow<PagingData<Comic>> {
+        return remote.getAllComics(id)
     }
 
     suspend fun getSelectedComic(id: Int): Comic {
