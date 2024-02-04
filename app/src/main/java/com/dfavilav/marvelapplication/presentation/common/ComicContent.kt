@@ -1,7 +1,6 @@
 package com.dfavilav.marvelapplication.presentation.common
 
 import android.content.res.Configuration
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -34,8 +33,7 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.dfavilav.marvelapplication.R
 import com.dfavilav.marvelapplication.domain.model.Thumbnail
-import com.dfavilav.marvelapplication.domain.model.hero.Hero
-import com.dfavilav.marvelapplication.navigation.Screen
+import com.dfavilav.marvelapplication.domain.model.comic.Comic
 import com.dfavilav.marvelapplication.presentation.components.ShimmerEffect
 import com.dfavilav.marvelapplication.ui.theme.CHARACTER_ITEM_HEIGHT
 import com.dfavilav.marvelapplication.ui.theme.LARGE_PADDING
@@ -47,11 +45,11 @@ import com.dfavilav.marvelapplication.util.createUrlWithExtension
 
 @ExperimentalCoilApi
 @Composable
-fun HomeListContent(
-    heroes: LazyPagingItems<Hero>,
+fun ComicListContent(
+    comics: LazyPagingItems<Comic>,
     navController: NavHostController
 ) {
-    val result = handlePagingResult(heroes)
+    val result = handlePagingResult(comics)
 
     if (result) {
         LazyColumn(
@@ -59,7 +57,7 @@ fun HomeListContent(
             verticalArrangement = Arrangement.spacedBy(SMALL_PADDING)
         ) {
             items(
-                items = heroes.itemSnapshotList.items,
+                items = comics.itemSnapshotList.items,
                 key = { hero ->
                     hero.id
                 }
@@ -72,7 +70,7 @@ fun HomeListContent(
 
 @Composable
 fun handlePagingResult(
-    characters: LazyPagingItems<Hero>
+    characters: LazyPagingItems<Comic>
 ): Boolean {
     characters.apply {
         val error = when {
@@ -88,11 +86,11 @@ fun handlePagingResult(
                 false
             }
             error != null -> {
-                EmptyScreen(error, characters)
+                ComicEmptyScreen(error, characters)
                 false
             }
             characters.itemCount < 1 -> {
-                EmptyScreen()
+                ComicEmptyScreen()
                 false
             }
             else -> true
@@ -103,13 +101,13 @@ fun handlePagingResult(
 @ExperimentalCoilApi
 @Composable
 fun CharacterItem(
-    character: Hero,
+    character: Comic,
     navController: NavHostController
 ) {
     Box(
         modifier = Modifier
-            .height(CHARACTER_ITEM_HEIGHT)
-            .clickable { navController.navigate(Screen.Comic.passCharacterId(character.id)) },
+            .height(CHARACTER_ITEM_HEIGHT),
+        //.clickable { navController.navigate(Screen.Details.passCharacterId(character.id)) },
         contentAlignment = Alignment.BottomStart
     ) {
         Surface(shape = RoundedCornerShape(size = LARGE_PADDING)) {
@@ -143,14 +141,16 @@ fun CharacterItem(
                     .fillMaxSize()
                     .padding(all = MEDIUM_PADDING)
             ) {
-                Text(
-                    text = character.name,
-                    color = MaterialTheme.colors.topAppBarContentColor,
-                    fontSize = MaterialTheme.typography.h4.fontSize,
-                    fontWeight = FontWeight.Bold,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis
-                )
+                character.title?.let {
+                    Text(
+                        text = it,
+                        color = MaterialTheme.colors.topAppBarContentColor,
+                        fontSize = MaterialTheme.typography.h6.fontSize,
+                        fontWeight = FontWeight.Bold,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis
+                    )
+                }
             }
         }
     }
@@ -159,11 +159,11 @@ fun CharacterItem(
 @ExperimentalCoilApi
 @Composable
 @Preview
-fun CharacterItemPreview() {
+fun ComicItemPreview() {
     CharacterItem(
-        character = Hero(
+        character = Comic(
             id = 1,
-            name = "Rick Sanchez",
+            title = "Rick Sanchez",
             description = "Sanchez",
             thumbnail = Thumbnail(
                 "",
@@ -177,11 +177,11 @@ fun CharacterItemPreview() {
 @ExperimentalCoilApi
 @Composable
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
-fun CharacterItemDarkPreview() {
+fun ComicItemDarkPreview() {
     CharacterItem(
-        character = Hero(
+        character = Comic(
             id = 1,
-            name = "Rick Sanchez",
+            title = "Rick Sanchez",
             description = "Sanchez",
             thumbnail = Thumbnail(
                 "",
