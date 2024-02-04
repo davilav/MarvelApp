@@ -17,5 +17,7 @@ object Constants {
     const val ONE = 1
     const val ZERO_LONG = 0L
     const val ITEMS_PER_PAGE = 100
+    const val MIN_BACKGROUND_IMAGE_HEIGHT = 0.4f
     const val DETAILS_ARGUMENT_KEY = "characterId"
+    const val COMIC_DETAILS_ARGUMENT_KEY = "comicId"
 }

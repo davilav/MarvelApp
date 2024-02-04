@@ -64,7 +64,7 @@ fun HomeListContent(
                     hero.id
                 }
             ) { characters ->
-                CharacterItem(characters, navController = navController)
+                ComicItem(characters, navController = navController)
             }
         }
     }
@@ -102,7 +102,7 @@ fun handlePagingResult(
 
 @ExperimentalCoilApi
 @Composable
-fun CharacterItem(
+fun ComicItem(
     character: Hero,
     navController: NavHostController
 ) {
@@ -160,7 +160,7 @@ fun CharacterItem(
 @Composable
 @Preview
 fun CharacterItemPreview() {
-    CharacterItem(
+    ComicItem(
         character = Hero(
             id = 1,
             name = "Rick Sanchez",
@@ -178,7 +178,7 @@ fun CharacterItemPreview() {
 @Composable
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 fun CharacterItemDarkPreview() {
-    CharacterItem(
+    ComicItem(
         character = Hero(
             id = 1,
             name = "Rick Sanchez",

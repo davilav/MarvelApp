@@ -10,9 +10,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import coil.annotation.ExperimentalCoilApi
 import com.dfavilav.marvelapplication.presentation.screens.comic.ComicScreen
+import com.dfavilav.marvelapplication.presentation.screens.detail.DetailsScreen
 import com.dfavilav.marvelapplication.presentation.screens.home.HomeScreen
 import com.dfavilav.marvelapplication.presentation.screens.search.SearchScreen
 import com.dfavilav.marvelapplication.presentation.screens.splash.SplashScreen
+import com.dfavilav.marvelapplication.util.Constants.COMIC_DETAILS_ARGUMENT_KEY
 import com.dfavilav.marvelapplication.util.Constants.DETAILS_ARGUMENT_KEY
 
 @ExperimentalMaterialApi
@@ -40,6 +42,14 @@ fun SetupNavGraph(navController: NavHostController) {
             })
         ) {
             ComicScreen(navController = navController)
+        }
+        composable(
+            route = Screen.Details.route,
+            arguments = listOf(navArgument(COMIC_DETAILS_ARGUMENT_KEY) {
+                type = NavType.IntType
+            })
+        ) {
+            DetailsScreen(navController = navController)
         }
     }
 }

@@ -10,4 +10,9 @@ sealed class Screen(val route: String) {
             return "comic_screen/$characterId"
         }
     }
+    data object Details : Screen("details_screen/{comicId}") {
+        fun passComicId(comicId: Int): String {
+            return "details_screen/$comicId"
+        }
+    }
 }

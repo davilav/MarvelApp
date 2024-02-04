@@ -1,6 +1,7 @@
 package com.dfavilav.marvelapplication.presentation.common
 
 import android.content.res.Configuration
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -34,6 +35,7 @@ import coil.request.ImageRequest
 import com.dfavilav.marvelapplication.R
 import com.dfavilav.marvelapplication.domain.model.Thumbnail
 import com.dfavilav.marvelapplication.domain.model.comic.Comic
+import com.dfavilav.marvelapplication.navigation.Screen
 import com.dfavilav.marvelapplication.presentation.components.ShimmerEffect
 import com.dfavilav.marvelapplication.ui.theme.CHARACTER_ITEM_HEIGHT
 import com.dfavilav.marvelapplication.ui.theme.LARGE_PADDING
@@ -62,7 +64,7 @@ fun ComicListContent(
                     hero.id
                 }
             ) { characters ->
-                CharacterItem(characters, navController = navController)
+                ComicItem(characters, navController = navController)
             }
         }
     }
@@ -100,22 +102,22 @@ fun handlePagingResult(
 
 @ExperimentalCoilApi
 @Composable
-fun CharacterItem(
-    character: Comic,
+fun ComicItem(
+    comic: Comic,
     navController: NavHostController
 ) {
     Box(
         modifier = Modifier
-            .height(CHARACTER_ITEM_HEIGHT),
-        //.clickable { navController.navigate(Screen.Details.passCharacterId(character.id)) },
+            .height(CHARACTER_ITEM_HEIGHT)
+            .clickable { navController.navigate(Screen.Details.passComicId(comic.id)) },
         contentAlignment = Alignment.BottomStart
     ) {
         Surface(shape = RoundedCornerShape(size = LARGE_PADDING)) {
             AsyncImage(
                 modifier = Modifier.fillMaxSize(),
                 model = ImageRequest.Builder(LocalContext.current)
-                    .data(data = character.thumbnail?.extension?.let {
-                        character.thumbnail?.path?.createUrlWithExtension(
+                    .data(data = comic.thumbnail?.extension?.let {
+                        comic.thumbnail?.path?.createUrlWithExtension(
                             it
                         )
                     })
@@ -141,7 +143,7 @@ fun CharacterItem(
                     .fillMaxSize()
                     .padding(all = MEDIUM_PADDING)
             ) {
-                character.title?.let {
+                comic.title?.let {
                     Text(
                         text = it,
                         color = MaterialTheme.colors.topAppBarContentColor,
@@ -160,8 +162,8 @@ fun CharacterItem(
 @Composable
 @Preview
 fun ComicItemPreview() {
-    CharacterItem(
-        character = Comic(
+    ComicItem(
+        comic = Comic(
             id = 1,
             title = "Rick Sanchez",
             description = "Sanchez",
@@ -178,8 +180,8 @@ fun ComicItemPreview() {
 @Composable
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 fun ComicItemDarkPreview() {
-    CharacterItem(
-        character = Comic(
+    ComicItem(
+        comic = Comic(
             id = 1,
             title = "Rick Sanchez",
             description = "Sanchez",
