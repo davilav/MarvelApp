@@ -30,6 +30,9 @@ android {
                 arguments["room.schemaLocation"] = "$projectDir/schemas"
             }
         }
+        testOptions {
+            unitTests.isReturnDefaultValues = true
+        }
     }
 
     buildTypes {
@@ -111,6 +114,9 @@ dependencies {
     implementation("com.google.firebase:firebase-crashlytics-ktx")
 
     testImplementation(libs.junit)
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.kotlin.test.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(platform(libs.compose.bom))
