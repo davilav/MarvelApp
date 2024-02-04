@@ -10,19 +10,19 @@ class FakeMarvelApi: MarvelApi {
     private val heroes = listOf(
         Hero(
             id = 1,
-            name = "Rick Sanchez",
+            name =  "Iron Man",
             description = "",
             thumbnail = Thumbnail("", "")
         ),
         Hero(
             id = 2,
-            name = "Rick Sanchez",
+            name = "Iron Man",
             description = "",
             thumbnail = Thumbnail("", "")
         ),
         Hero(
             id = 3,
-            name = "Rick Sanchez",
+            name =  "Iron Man",
             description = "",
             thumbnail = Thumbnail("", "")
         )

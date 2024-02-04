@@ -30,19 +30,19 @@ class SearchHeroesSourceTest {
         heroes = listOf(
             Hero(
                 id = 1,
-                name = "Rick Sanchez",
+                name = "Iron Man",
                 description = "",
                 thumbnail = Thumbnail("", "")
             ),
             Hero(
                 id = 2,
-                name = "Rick Sanchez",
+                name = "Iron Man",
                 description = "",
                 thumbnail = Thumbnail("", "")
             ),
             Hero(
                 id = 3,
-                name = "Rick Sanchez",
+                name = "Iron Man",
                 description = "",
                 thumbnail = Thumbnail("", "")
             )
@@ -54,7 +54,7 @@ class SearchHeroesSourceTest {
         runTest {
             val charactersSource = SearchHeroesSource(
                 marvelApi = marvelApi,
-                query = "Rick Sanchez",
+                query = "Iron Man",
                 marvelDatabase
             )
             val loadResult = charactersSource.load(
@@ -75,7 +75,7 @@ class SearchHeroesSourceTest {
         runTest {
             val charactersSource = SearchHeroesSource(
                 marvelApi = marvelApi,
-                query = "Rick Sanchez",
+                query =  "Iron Man",
                 marvelDatabase
             )
             val loadResult = charactersSource.load(
